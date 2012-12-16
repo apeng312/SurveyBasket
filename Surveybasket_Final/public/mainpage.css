@@ -1,0 +1,234 @@
+#legends .legend a[href] {
+	color: white;
+	text-decoration:none;
+}
+
+.page-content {
+	margin-top:2.5em;
+	margin-left:auto;
+	margin-right:auto;
+	width:45em;
+}
+
+#survey-list .survey {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-o-box-sizing:border-box;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0.5em 2em 1em 2em;
+    width: 60%;
+	min-width: 43em;
+    border-radius: 1.5em;
+}
+
+#legends {
+    margin-right: auto;
+    margin-left: auto;
+    width:60%;
+	text-align: center;
+	min-width: 45em;
+}
+
+#legends > :nth-child(1) {
+	margin-left:0;
+}
+
+#legends > .buttonsection > :nth-child(1) > button {
+	padding:0.1em 1.5em;
+}
+
+#legends > .buttonsection > :nth-child(1) {
+	padding-left:0;
+}
+
+#legends ul.dropdown-menu {
+	margin-top:1em;
+}
+
+#legends > .buttonsection > :nth-child(3) {
+	margin-right:0:
+}
+
+#legendbutton {
+	margin-top:-1em;
+}
+
+#legends > .buttonsection > * {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-o-box-sizing:border-box;
+    cursor: pointer;
+    margin: 0;
+	width: 32%;
+	height: 2em;
+	padding: 0.4em;
+	display: inline-block;
+}
+
+.research {
+    background-color: #e56f6f;
+}
+
+.marketing {
+    background-color: #e5a46f;
+}
+
+.feedback {
+    background-color: #428989;
+}
+
+.event-planning {
+    background-color: #59b759;
+}
+
+
+.other {
+    background-color: #ccc;
+}
+
+h5 {
+    margin-right: 1.5em;
+    display: inline;
+}
+
+h5 span {
+	font-weight:normal;
+}
+
+.legend.research {
+	box-shadow: 0 0 1.2em #800909 inset;
+}
+
+.legend.marketing {
+	box-shadow: 0 0 1.2em #804009 inset;
+}
+
+.legend.feedback {
+	box-shadow: 0 0 1.2em #002323 inset;
+}
+
+.legend.event-planning {
+	box-shadow: 0 0 1.2em #035103 inset;
+}
+
+.legend.other {
+	box-shadow: 0 0 1.2em #666 inset;
+}
+
+.legend.research:active {
+	box-shadow: 0 0 0.8em #800909 inset;
+}
+
+.legend.marketing:active {
+	box-shadow: 0 0 0.8em #804009 inset;
+}
+
+.legend.feedback:active {
+	box-shadow: 0 0 0.8em #002323 inset;
+}
+
+.legend.event-planning:active {
+	box-shadow: 0 0 0.8em #035103 inset;
+}
+
+.legend.other:active {
+	box-shadow: 0 0 0.8em #666 inset;
+}
+
+.legend:active {
+	position: relative;
+	top:1px;
+}
+
+.research {
+	box-shadow: 0 0 3em #800909 inset;
+}
+
+.marketing {
+	box-shadow: 0 0 3em #804009 inset;
+}
+
+.feedback {
+	box-shadow: 0 0 3em #002323 inset;
+}
+
+.event-planning {
+	box-shadow: 0 0 3em #035103 inset;
+}
+
+.other {
+	box-shadow: 0 0 3em #666 inset;
+}
+
+#survey-list :nth-child(1) {
+	margin-top:0;
+}
+
+
+#survey-list {
+	margin-top:1em;
+}
+
+h1 {
+	text-align: center;
+}
+
+@media only screen and (min-width: 721px) {
+	small {
+		display:inline;
+	}
+	
+	.buttonsection {
+		display:inline-block;
+		width:49.6%;
+	}
+
+}
+
+@media only screen and (max-width: 760px) {
+	small {
+		display:block;
+	}
+	#legends .buttonsection {
+		display:block;
+		width:30em;
+		margin-left:2px;
+	}
+	
+	#legends .buttonsection#dropd {
+		display:block;
+		width:30em;
+		margin-left:8px;
+		margin-top:0px;
+	}
+	
+	#legends .buttonsection .legend:nth-child(3) {
+		margin-right:0;
+	}
+	
+	#legends .legend {
+		width:97px;
+		margin:10px 50px 0 0;
+	}
+	#legendbutton {
+		margin-left:-62px;
+	}
+	.page-content, #survey-list > .survey {
+		min-width:30em;
+		width:30em;
+	}
+	h5 {
+		display:block;
+	}
+	
+	.page-content {
+		padding-left: 0.2em;
+		padding-right: 0.2em;
+	}
+	
+}

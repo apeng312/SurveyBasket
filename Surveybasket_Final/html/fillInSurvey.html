@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Take Surveys</title>
+        <meta name="viewport" content="width=device-width, initial-scale=0.7">
+        <link href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="/fillInSurvey.css" rel="stylesheet">
+        <link href="/navbar.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div class="container">
+            <div id="bar" class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <a class="brand" href="#">Survey Basket</a>
+                    <ul class="nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/page/make_survey.html">Post Survey</a></li>
+                        <li><a href="/page/displayResults.html">My Surveys</a></li>
+                    </ul>
+                    <ul class="nav pull-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="" data-toggle="dropdown">
+                                <span class="username"></span> Account
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Survey History</a></li>
+                                <li><a href="/logout">Log Out</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                        	<a href=""><span class="label label-info">Credits: <span class="credits"></span></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="alternate-bar" class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <a class="brand" href="#">Survey Basket</a>
+                    <ul class="nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/page/make_survey.html">Post</a></li>
+                        <li><a href="/page/displayResults.html">My Surveys</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="" data-toggle="dropdown">
+                                My Account
+                                <span class="badge badge-info credits"></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav dropdown-menu-mod">
+                        <li><a href="#">Survey History</a></li>
+                        <li><a href="/logout">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="page-content well">
+                <form onSubmit="return False;">
+                	<div>
+                        <div id="surveyhead" class="page-header">
+                        </div>
+                        <ol id="survey-list">
+                        </ol>
+                        <button type="button" class="btn btn-primary" id="submit">Submit</button>
+                        <p id="err"></p>
+                    </div>
+                </form>
+                <div class="alert hidden">
+                    <h3>Thank you!</h3>
+                    <p>Thanks for taking the time to fill out this survey!</p>
+                    <p>You now have <span class="credits"></span> credits!</p>
+                    <a href="/" class="btn">Return to Home</a>
+                </div>
+            </div>
+        </div>
+		<script type="text/template" id="survey-head">
+			<h3><%=name%></h3>
+			<p><span class="labels">Description:</span> <%=description%></p>
+			<p><span class="labels">Category:</span> <%=category%></p>
+		</script>
+        <script type="text/template" id="question-template">
+			<li <% if (required) { %><%="class=\"required\""%><% } %>>
+			<h5><span><%=content %></span></h5>
+			<% if (type === "free_response") { %>
+			<textarea name="answer<%=id%>"></textarea>
+			<% } else { _(choices).each(function (choice) {%>
+			<p><input type="radio" name="answer<%=id %>" value="<%=choice %>"> <%= choice%></p>
+			<% });} %>
+			</li>
+        </script>
+        <script src="/jquery-1.8.2.min.js"></script>
+        <script src="/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/underscore-min.js"></script>
+        <script src="/fillInSurvey.js"></script>
+        <script src="/navbar.js"></script>
+
+    </body>
+</html>

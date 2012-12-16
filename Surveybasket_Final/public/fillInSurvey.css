@@ -1,0 +1,63 @@
+.container {
+	width:100%;
+}
+
+.page-content {
+	margin:2.5em 10%;
+	padding:10px;
+}
+
+input[type="radio"], input[type="checkbox"] {
+	display: inline;
+	margin-right: 5px;
+	margin-bottom: 4px;
+	margin-top: 2px;
+}
+
+.labels {
+	font-weight:bold;
+}
+
+textarea {
+	resize:none;
+	height: 75px;
+}
+
+.required span:before {
+	content:"*";
+	display:inline;
+}
+
+.taken:before, .taken:after {
+	content:"You have already taken this survey";
+	background-color:#FF4444;
+	color:white;
+	display:block;
+	width:100%;
+	height:30px;
+	border-radius:5px;
+	box-shadow:0 0 15px #110000 inset;
+	text-align:center;
+	padding-top:4px;
+}
+
+.owned:before, .owned:after {
+	content:"This is a survey you made";
+	background-color:#44AA44;
+	color:white;
+	display:block;
+	width:100%;
+	height:30px;
+	border-radius:5px;
+	box-shadow:0 0 15px #001100 inset;
+	text-align:center;
+	padding-top:4px;
+}
+
+.hidden {
+	display:none;
+}
+
+#err {
+	color:red;
+}

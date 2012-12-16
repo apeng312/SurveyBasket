@@ -1,0 +1,16 @@
+Public contains all of our js and css files. html contains all html files. js files in the 
+main folder (not in the subfolder) are server side code.
+1. Javascript: every html file has at least one javascript file in public folder
+2. Canvas: not really
+3. HTML: in html folder
+4. CSS: in public folder
+5. DOM manipulation: js files in public folder
+6. Jquery: js files in public folder
+7. UI widget: bootstrap
+8. No PhoneGap
+9. AJAX (client): js files in public folder
+10. AJAX(server): Survey.js, server.js
+11. node.js: server.js
+12. no websockets
+13. client-side caching and localStorage (make_survey.js)
+14. server-side datase: mongodb(Survey.js, server.js)

@@ -1,0 +1,31 @@
+#myTable {
+    overflow: scroll;
+}
+
+#table-design {
+    margin-top: 1em;
+    padding: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 1px solid #ebebeb;
+}
+#table-design td, #table-design th {
+    padding: 1px 5px;
+}
+#table-design thead {
+    font: normal 1.1em Helvetica Neue,Helvetica,sans-serif;
+    text-shadow: 0 1px 0 white;
+    color: #999;
+}
+#table-design th {
+    text-align: left;
+    border-bottom: 1px solid #fff;
+}
+#table-design td {
+    font-size: 1em;
+    font-weight: normal;
+}
+#table-design td:hover {
+    background-color: #fff;
+}

@@ -1,0 +1,160 @@
+.page-content {
+	margin-top:20px;
+	margin-bottom:20px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:10px;
+	min-width:402px;
+	width:75%;
+	display:none;
+}
+
+textarea {
+	resize:none;
+	height: 75px;
+}
+
+input, textarea, select, #inputbutton {
+	display:block;
+}
+
+.qcontainer, input, textarea, #qbox-prev, #qbox-prev2 {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-o-box-sizing:border-box;
+}
+
+#qbox-prev, .qcontainer, #qbox-prev2 {
+	background:#CCC;
+	border-style:solid;
+	border-width:1px;
+	border-color:#999;
+	border-radius:5px;
+	padding-right:5px;
+	padding-left:5px;
+	margin-bottom:10px;
+}
+
+.qcontainer, input[type="text"] {
+	height:30px;
+}
+
+.qcontainer > p {
+	padding-top:4px;
+	margin:0;
+}
+
+button.btn {
+	margin-bottom:10px;
+}
+
+input[type="radio"], input[type="checkbox"] {
+	display: inline;
+	margin-right: 5px;
+	margin-bottom: 4px;
+	margin-top: 2px;
+}
+
+#qbox-prev p, #qbox-prev2 p {
+	border:0;
+	padding:0;
+	margin:0;
+}
+
+#qbox-prev2 .closebox {
+	display:none;
+}
+
+.labels {
+	font-weight:bold;
+}
+
+.hiddenBox, .hiddenBox *, .breadcrumb .hiddenBox, .breadcrumb .hiddenBox * {
+	display:none;
+}
+
+.visiBox {
+	display:block;
+}
+
+.breadcrumb li.visiBox, .divider.visiBox {
+	display:inline-block
+}
+
+.hiddenobj {
+	display:none;
+}
+
+.loginmsgs > p.visiobj {
+	display:block;
+}
+
+.err {
+	color:red;
+}
+
+.head h1 {
+	padding-left:15px;
+}
+
+.required span:before {
+	content:"*";
+	display:inline;
+}
+
+@media (max-width:900px) {
+	input, textarea, select, #inputbutton, .qcontainer, #qbox-prev, #qbox-prev2 {
+		width:350px;
+	}
+	
+	#qbox-prev textarea, #qbox-prev input[type="text"], #qbox-prev select {
+		width:270px;
+	}
+	
+	#qbox-prev2 textarea, #qbox-prev2 input[type="text"], #qbox-prev2 select {
+		width:270px;
+	}
+	
+	#inputbutton > input {
+		width:214px;
+	}
+}
+
+@media (min-width:901px) {
+	input, textarea, select, #inputbutton, .qcontainer, #qbox-prev, #qbox-prev2{
+		width:600px;
+	}
+	
+	#qbox-prev textarea, #qbox-prev input[type="text"], #qbox-prev select {
+		width:520px;
+	}
+	
+	#qbox-prev2 textarea, #qbox-prev2 input[type="text"], #qbox-prev2 select {
+		width:520px;
+	}
+	
+	#inputbutton > input {
+		width:464px;
+	}
+}
+
+@media only screen and (min-width: 748px) {
+	#surveylink {
+		display:inline;
+	}
+}
+
+@media only screen and (max-width: 747px) {
+	.surveylink {
+		display:block;
+		overflow-x:scroll;
+		height:30px;
+		background-color:#F5F5F5;
+		padding: 1px 5px;
+		border-radius:5px;
+		border-width:1px;
+		border-style:solid;
+		border-color:#ccc;
+	}
+}

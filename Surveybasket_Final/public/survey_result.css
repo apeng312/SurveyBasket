@@ -1,0 +1,96 @@
+.container {
+	width:100%;
+}
+
+#two-button {
+    display:inline-block;
+}
+
+.page-content {
+    width: 60%;
+	margin:2.5em auto;
+	padding:1em;
+    border-radius: 1em;
+}
+
+.button {
+    padding: 0em 10em;
+}
+
+#survey-list {
+    margin:0 auto;
+    font-weight: bold;
+}
+
+.one-question {
+    margin: 2em 0em;
+}
+
+.question {
+    margin: 1em 0em;
+}
+
+.answer {
+    margin-left: 1em;
+    margin-top:0.5em;
+}
+
+.click-to-show .free-answer {
+    display:none;
+    margin-top: 0.5em;
+    margin-bottom: 0em;
+}
+
+#legends {
+    margin-right: auto;
+    margin-left: auto;
+    width:50%;
+}
+
+.legend {
+    cursor: pointer;
+    margin: 0.5em 1.5em;
+}
+
+.research {
+    background-color: #ffff99;
+}
+
+.marketing {
+    background-color: #ccffff;
+}
+
+.feedback {
+    background-color: #ffcccc;
+}
+
+.event-planning {
+    background-color: #ffcce6;
+}
+
+.others {
+    background-color: #e6ccff;
+}
+
+h5 {
+    margin-left: 1.5em;
+    display: inline;
+}
+
+@media only screen and (min-width:669px) {
+	#survey-list {
+		width: 80%;
+	}
+}
+
+@media only screen and (max-width:668px) {
+	#survey-list {
+		padding-top:14px;
+		margin-top:14px;
+		width: 100%;
+		overflow-x: scroll;
+		border-color:#ccc;
+		border-width:1px;
+		border-style:solid;
+	}
+}

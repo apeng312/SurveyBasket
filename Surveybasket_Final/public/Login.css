@@ -1,0 +1,109 @@
+.container {
+	text-align:center;
+	padding-top:
+}
+
+.hero-unit > div {
+	width:400px;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+#myCarousel .item {
+	height:284px;
+	margin:0;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-o-box-sizing:border-box;
+}
+
+#myCarousel .item:not(.hero-unit) {
+    background-color: #fff;
+}
+
+.loginfield {
+	display:inline-block;
+	margin: 1px 10px 1px 10px;
+}
+
+.loginfield input {
+	margin-bottom:0;
+}
+
+form {
+	display:inline-block;
+}
+
+.leftalign {
+	text-align: left;
+}
+
+.hiddenobj {
+	display:none;
+}
+
+.visiobj {
+	display:inline-block;
+}
+
+#heading {
+	top:0;
+	left:0;
+	width:100%;
+}
+
+.content-body {
+	text-align:left;
+}
+
+#aboutus {
+	margin-left:10%;
+	margin-right:10%;
+	margin-bottom:100px;
+}
+
+.err {
+	color:red;
+	margin-left:10px
+}
+
+#loginmsgs > p.visiobj {
+	display:block;
+	margin-left:10px;
+}
+
+.item > img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (min-width: 841px) {
+	#myCarousel {
+		display:block;
+	}
+	
+	.more-top {
+		padding-top:345px;
+	}
+}
+
+@media only screen and (max-width: 840px) {
+	#myCarousel {
+		display:none;
+	}
+	
+	form.visiobj {
+		margin-top:50px;
+		width:230px;
+	}
+	
+	.more-top {
+		padding-top:100px;
+	}
+}
+
+.fixed-head {
+	position:fixed;
+	width:100%;
+}

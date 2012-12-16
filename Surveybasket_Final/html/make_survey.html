@@ -1,0 +1,232 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Survey Basket — Make a Survey</title>
+        <meta name="viewport" content="width=device-width, initial-scale=0.7">
+        <link href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="/make_survey.css" rel="stylesheet">
+        <link href="/navbar.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div class="container">
+            <div id="bar" class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <a class="brand" href="#">Survey Basket</a>
+                    <ul class="nav">
+                        <li><a href="/">Home</a></li>
+                        <li class="active"><a href="#">Post Survey</a></li>
+                        <li><a href="/page/displayResults.html">My Surveys</a></li>
+                    </ul>
+                    <ul class="nav pull-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="" data-toggle="dropdown">
+                                <span class="username"> Account</span> Account
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Survey History</a></li>
+                                <li><a href="/logout">Log Out</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                        	<a href=""><span class="label label-info">Credits: <span class="credits"></span></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="alternate-bar" class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <a class="brand" href="#">Survey Basket</a>
+                    <ul class="nav">
+                        <li><a href="/">Home</a></li>
+                        <li class="active"><a href="/page/make_survey.html">Post</a></li>
+                        <li><a href="/page/displayResults.html">My Surveys</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="" data-toggle="dropdown">
+                                My Account
+                                <span class="badge badge-info credits"></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav dropdown-menu-mod">
+                        <li><a href="#">Survey History</a></li>
+                        <li><a href="/logout">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="page-content hiddenBox" id="surveyinfo">
+                <div class="head">
+                    <h1>Create a survey</h1>
+                    <ul class="breadcrumb">
+                        <li class="active">Survey Info<span class="hiddenBox divider">/</span></li>
+                        <li class="hiddenBox"><a href="#/surveyquestions">Make Questions</a><span class="divider">/</span></li>
+                        <li class="hiddenBox"><a href="#/confirm">Confirm</a></li>
+                    </ul>
+                </div>
+                <div class="well">
+                    <form name="survey0" onSubmit="return validateForm0();">
+                        <h3>Survey Info</h3>
+                        <label for="name">Survey Name</label>
+                        <input type="text" name="name" placeholder="Survey Name">
+                        
+                        <label for="description">Survey Description</label>
+                        <textarea name="description"></textarea>
+                        
+                        <label for="category">Survey Category</label>
+                        <select name="category">
+                            <option value="">Pick a Survey Category</option>
+                            <option value="research">Research Survey</option>
+                            <option value="marketing">Marketing Survey</option>
+                            <option value="event-planning">Event Planning Survey</option>
+                            <option value="feedback">Feedback Survey</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div id="futuresections">
+                        </div>
+                        <button type="submit" class="btn savebtn" formaction="#/surveyinfo" name="saved" value="true">Save</button>
+                        <button type="submit" class="btn" formaction="#/surveyquestions" name="submitted0" value="true">Continue ></button>
+                        <div class="loginmsgs leftalign">
+                                <p class="hiddenobj err notfilledErr">Please complete all fields</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="page-content hiddenBox" id="surveyquestions">
+                <div class="head">
+                    <h1>Create a survey</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="#/surveyinfo">Survey Info</a><span class="divider">/</span></li>
+  						<li class="active">Make Questions<span class="hiddenBox divider">/</span></li>
+                        <li class="hiddenBox"><a href="#/confirm">Confirm</a></li>
+                    </ul>
+                </div>
+                <div class="well">
+                    <form name="survey1-prequestion" onSubmit="return false;">
+                        <h3>Make Questions</h3>
+                        <label for="type">Type</label>
+                        <select name="type">
+                            <option value="">Pick a Question Type</option>
+                            <option value="multiple_choice">Multiple Choice</option>
+                            <option value="free_response">Free Response</option>
+                        </select>
+                        <label for="content">Question Prompt</label>
+                        <textarea name="content"></textarea>
+                        <p><input type="checkbox" name="required">Make this question required</p>
+                        <div id="choicesformfield" class="hiddenBox">
+                            <label for="choice">Question Choices</label>
+                            <span id="inputbutton">
+                                <input type="text" name="choice"  placeholder="Choice">
+                                <button class="btn" type="button" onClick="makeChoice();">Create Choice</button>
+                            </span>
+                            <div id="questionChoices">
+                            </div>
+                        </div>
+                        <button type="button" class="btn" onClick="makeQuestion();">Make Question</button>
+                        <div class="loginmsgs leftalign">
+                                <p class="hiddenobj err notfilledErr">Please complete all fields</p>
+                                <p class="hiddenobj err choiceErr">Please make at least two choices for your multiple choice question</p>
+                                <p class="hiddenobj err noTextErr"> Please include some text in your question choices</p>
+                        </div>
+                    </form>
+                    
+                    <form name="survey1" onSubmit="return validateForm1();" action="#/confirm">
+                    	<div id="prev-form">
+                        </div>
+                        <div id="qbox-prev">
+                            <div class="page-header">
+                                <h4>Preview</h4>
+                            </div>
+                            <ol></ol>
+                        </div>
+                        <button type="submit" class="btn savebtn" formaction="#/surveyquestions" name="saved" value="true">Save</button>
+                        <button type="submit" class="btn" name="submitted" value="true" formaction="#/confirm">Continue ></button>
+                        <div class="loginmsgs leftalign">
+                                <p class="hiddenobj err questionErr">Please make at least two questions for your survey</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="page-content hiddenBox" id="confirm">
+                <div class="head">
+                    <h1>Create a survey</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="#/surveyinfo">Survey Info</a><span class="divider">/</span></li>
+                        <li><a href="#/surveyquestions">Make Questions</a><span class="divider">/</span></li>
+  						<li class="active">Confirm</li>
+                    </ul>
+                </div>
+                <div class="well">
+                	<div id="previewbox">
+                        <h3>Confirm</h3>
+                        <div id="qbox-prev2">
+                            <div class="page-header">
+                                <h4>Preview</h4>
+                            </div>
+                            <div id="preview-head">
+                            </div>
+                            <ol></ol>
+                        </div>
+                        <button type="button" id="submitAll" class="btn">Confirm</button>
+                    </div>
+                    <div class="alert hiddenBox" id="success">
+                    	<h3>You're done!</h3>
+                        <p>Your survey link: <span class="surveylink"></span></p>
+                        <p>You now have <span class="credits"></span> credits</p>
+                        <a href="?#" class="btn">Make Another Survey</a>
+                        <a href="/" class="btn">Return to Home</a>
+                    </div>
+                    <div class="alert hiddenBox" id="failure">
+                    	<h3>Not Enough Credits!</h3>
+                        <p>You need at least 50 credits to make a survey</p>
+                        <p>You only have <span class="credits"></span> credits</p>
+                        <a href="?#" class="btn">Return to Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/template" id="question-template">
+			<li <% if (required !== undefined && required !== "false" && required !== false) { %><%="class=\"required\""%><% } %>>
+			<button type="button" class="close closebox">&times;</button>
+			<h5><span><%=content %></span></h5>
+			<% if (type === "free_response") { %>
+			<textarea name="answer<%=_id%>"></textarea>
+			<% } else { _(choices).each(function (choice) {%>
+			<p><input type="radio" name="answer<%=_id %>" value="<%=choice %>"> <%= choice%></p>
+			<% });} %>
+			<input type="hidden" name="types" value="<%=type%>">
+			<input type="hidden" name="contents" value="<%=content%>">
+			<input type="hidden" name="choices" value='<%=JSON.stringify(choices)%>'>
+			<input type="hidden" name="required" value='<%=JSON.stringify(required!==undefined && required !== "false" && required !== false)%>'
+			</li>
+		</script>
+        <script type="text/template" id="choices-template">
+			<div class="qcontainer">
+				<button type="button" class="close closebox">&times;</button>
+				<p><%=choicescontent %></p>
+				<input type="hidden" name="choices" value="<%=choicescontent %>">
+			</div>
+		</script>
+        <script type="text/template" id="prev-formfill">
+			<% for (prop in obj) { var val = obj[prop]; if (typeof(val) === "string") { %>
+			<input type="hidden" name="<%=prop%>" value="<%=val%>">
+			<% } else if (val instanceof Array) { _(val).each(function(value) { %>
+			<input type="hidden" name="<%=prop%>" value="<%=value%>">
+			<% });}} %>
+			
+		</script>
+        <script type="text/template" id="preview">
+			<h3><%=name%></h4>
+			<p><span class="labels">Description:</span> <%=description%></p>
+			<p><span class="labels">Category:</span> <%=category%></p>
+		</script>
+        <script src="/jquery-1.8.2.min.js"></script>
+        <script src="/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/underscore-min.js"></script>
+        <script src="/make_survey.js"></script>
+        <script src="/navbar.js"></script>
+    </body>
+</html>

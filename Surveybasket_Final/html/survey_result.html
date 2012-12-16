@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Take Surveys</title>
+        <meta name="viewport" content="width=device-width, initial-scale=0.7">
+        <link href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="/survey_result.css" rel="stylesheet">
+        <link href="/survey_table.css" rel="stylesheet">
+        <link href="/navbar.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div class="container">
+            <div class="container">
+            <div id="bar" class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <a class="brand" href="#">Survey Basket</a>
+                    <ul class="nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/page/make_survey.html">Post Survey</a></li>
+                        <li><a href="/page/displayResults.html">My Surveys</a></li>
+                    </ul>
+                    <ul class="nav pull-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="" data-toggle="dropdown"><span class="username"></span> Account<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Survey History</a></li>
+                                <li><a href="/logout">Log Out</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                        	<a href=""><span class="label label-info">Credits: <span class="credits"></span></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="alternate-bar" class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <a class="brand" href="#">Survey Basket</a>
+                    <ul class="nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/page/make_survey.html">Post</a></li>
+                        <li><a href="/page/displayResults.html">My Surveys</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="" data-toggle="dropdown">
+                                My Account
+                                <span class="badge badge-info credits"></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav dropdown-menu-mod">
+                        <li><a href="#">Survey History</a></li>
+                        <li><a href="/logout">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="page-content well">
+                <div class="btn-group button two-button">
+                  <button class="btn" id="chart-button">Chart</button>
+                  <button class="btn" id="table-button">Table</button>
+                </div>
+                <div id="survey-list">
+                </div>
+             </div>
+
+        <script type="text/template" id="response-template">
+        <div class="one-question">
+            <div class="question"><%=index%><%=content %></div>
+            <% if (type === "multiple_choice") { %>
+                <div class="answer alert" id="<%=chartIndex %>"></div>
+                <div id="<%=typeIndex%>" class="hidden"><%=type%></div>
+                <div id="<%=resultIndex %>" class="hidden"><%=result%></div>
+            <% } else {
+                    if (JSON.parse(result).length === 0) { %>
+                        <div class="answer alert">No responses received yet<div>
+                    <% } else { %>
+                    <div class="click-to-show down">
+                        <button type="button" class="btn btn-primary answer" data-toggle="button">Click to see all responses</button>
+                        <% for (var i=0; i < JSON.parse(result).length; i++) {
+                            response = JSON.parse(result)[i] %>
+                            <div class="answer free-answer alert"><%=i+1%>. <%=response%></div>
+                        <% } %>
+                    </div>
+                   <%}%>
+            <% } %>
+            </div>
+        </div>
+        </script>
+
+        <script type="text/template" id="question-template">
+            <div><%=index%><%=content %></div>
+            <% if (type === 'free_response') { %>
+            <textarea name="answer<%=_id %>"></textarea>
+            <% } else { _(choices).each(function (choice) { %>
+            <input type="radio" name="answer<%=_id %>" value="<%=choice %>"> <%= choice %>
+            <% });} %>
+        </script>
+
+        <script type="text/template" id="table-template">
+         <div id="myTable">
+            <table id="table-design" class="alert">
+                <thead>
+                    <th>Responder</th>
+                    <% _(questions).each(function(question) { %>
+                        <th><%=question%></th>
+                    <% })%>
+                </thead>
+                <tbody>
+                    <% for (var i=0; i<responders.length; i++) { %>
+                        <tr>
+                        <td>Person <%=i+1%></td>
+                        <% _(responders[i].responses).each(function(answer) {%>
+                            <td><%=answer%></td>
+                        <% }) %>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table> 
+        </div>
+        </script>
+		<script src="/jquery-1.8.2.min.js"></script>
+        <script src="/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/underscore-min.js"></script>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script src="/navbar.js"></script>
+        <script src="/survey_result.js"></script>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script src="/create_chart.js"></script>
+    </body>
+</html>

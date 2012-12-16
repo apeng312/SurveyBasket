@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Survey Basket — Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=0.7">
+        <link href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="/Login.css" rel="stylesheet">
+        <link href="/navbar.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div class="container">
+            <div id="heading">
+                <div id="bar" class="navbar navbar-static-top">
+                    <div class="navbar-inner">
+                        <a class="brand" href="#">Survey Basket</a>
+                        <ul class="nav center">
+                            <li><a href="#/login">Login</a></li>
+                            <li><a href="#/register">Register</a></li>
+                            <li><a href="#/aboutus">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="alternate-bar" class="navbar navbar-static-top">
+                    <div class="navbar-inner">
+                        <a class="brand" href="#">Survey Basket</a>
+                        <ul class="nav center">
+                            <li><a href="#/login">Login</a></li>
+                            <li><a href="#/register">Register</a></li>
+                            <li><a href="#/aboutus">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="myCarousel" class="carousel slide">
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                        <div class="active item hero-unit">
+                            <div>
+                                <h1>Survey Basket</h1>
+                                <p>The best site on the web for surveys!</p>
+                                <p>
+                                    <a class="btn btn-primary btn-large" href="#/register">
+                                        Register to Make a Survey
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/img/survey.jpg" height="284">
+                        </div>
+                        <div class="item">
+                            <img src="/img/22.jpg" height="284">
+                        </div>
+                    </div>
+                    <!-- Carousel nav -->
+                    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+                </div>
+            </div>
+            
+            <form name="loginform" class="visiobj" onSubmit="return False;">
+                <div class="loginfield">
+                    <label for="username" class="leftalign">Username</label>
+                    <input type="text" name="username" id="username">
+                </div>
+                <div class="loginfield">
+                    <label for="password" class="leftalign">Password</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div class="loginfield  hiddenobj" id="cpass">
+                    <label for="confirmpassword" class="leftalign">Confirm Password</label>
+                    <input type="password" name="confirmpassword" id="confirmpassword">
+                </div>
+                <div id="loginbutton" class="visiobj loginfield">
+                	<button type="submit" class="btn" onClick="return login();">Log In</button>
+                </div>
+                <div id="registerbutton" class="hiddenobj loginfield">
+                	<button type="submit" class="btn btn-primary" onClick="return register();">Register</button>
+                </div>
+                <div id="loginmsgs" class="leftalign">
+                	<p id="registerSuccess" class="hiddenobj">Registration successful</p>
+                    <p id="passConfirmErr" class="hiddenobj err">Your passwords do not match</p>
+                    <p id="registerErr" class="hiddenobj err">That username is already in use</p>
+                    <p id="loginErr" class="hiddenobj err">Wrong username and password combination</p>
+                    <p id="notfilledErr" class="hiddenobj err">Please fill in all fields</p>
+                    <p id="illegalInputErr" class="hiddenobj err">Only alphanumeric characters, underscores and dashes are allowed in the username</p>
+                    <p id="shortPassErr" class="hiddenobj err">Your password must be at least 6 characters</p>
+                </div>
+            </form>
+            
+            <div id="aboutus" class="hiddenobj">
+            	<div class="page-header">
+                  <h1>About Us <small>The Survey Basket Team</small></h1>
+                </div>
+                <div class="content-body">
+                    <h5>Our Project</h5>
+                    <p>
+                        We're a team from Carnegie Mellon University's cross-platform app class, 15237. We made this website for our 2012 fall project. This website is meant to be a platform for students to post surveys and give feedbacks to each other. We hope future 237 students and students from other classes can use this website to publish their surveys and get infomation from their peers. 
+                    </p>
+                    <h5>Creators: </h5>
+                    <p>Andy Peng is a second-year menchanical engineering student. He can be contacted by email: apeng@andrew.cmu.edu </p><p>Kechun(Coco) Mao is a second-year math student. She can be contacted by email: kmao@andrew.cmu.edu </p>
+                    <h5>Special thanks to: </h5>
+                    <p>Professor David Kosbie (15237 instructor)</p>
+                    <p>Dillon Grove (project mentor)</p>
+                </div>
+            </div>
+        </div>
+        <script src="/jquery-1.8.2.min.js"></script>
+        <script src="/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/underscore-min.js"></script>
+        <script src="/Login.js"></script>
+    </body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Take Surveys</title>
+        <meta name="viewport" content="width=device-width, initial-scale=0.7">
+        <link href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="/mainpage.css" rel="stylesheet">
+        <link href="/navbar.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div class="container">
+            <div id="bar" class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <a class="brand" href="#">Survey Basket</a>
+                    <ul class="nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/page/make_survey.html">Post Survey</a></li>
+                        <li><a href="/page/displayResults.html">My Surveys</a></li>
+                    </ul>
+                    <ul class="nav pull-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="" data-toggle="dropdown">
+                                <span class="username"></span> Account
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Survey History</a></li>
+                                <li><a href="/logout">Log Out</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                        	<a href=""><span class="label label-info">Credits: <span class="credits"></span></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="alternate-bar" class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <a class="brand" href="#">Survey Basket</a>
+                    <ul class="nav">
+                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="/page/make_survey.html">Post</a></li>
+                        <li><a href="/page/displayResults.html">My Surveys</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="" data-toggle="dropdown">
+                                My Account
+                                <span class="badge badge-info credits"></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav dropdown-menu-mod">
+                        <li><a href="#">Survey History</a></li>
+                        <li><a href="/logout">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="page-header">
+              <h1>Welcome! <small>Would you like to fill out one of these surveys?</small></h1>
+            </div>
+            
+            <div class="page-content well">
+                <!-- /btn-group -->
+            <div id="legends">
+                <div class="buttonsection" id="dropd">
+                    <div class="btn-group">
+                        <button id="legendbutton" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Sort by<span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#sortByTime" id="time">Time</a></li>
+                          <li><a href="#sortByPopularity" id="popularity">Popularity</a></li>
+                        </ul>
+                    </div>
+                    <span class="label legend marketing"><a href="#/marketing">marketing</a></span>
+                    <span class="label legend research"><a href="#/research">research</a></span>
+                </div>
+                <div class="buttonsection">
+                    <span class="label legend feedback"><a href="#/feedback">feedback</a></span>
+                    <span class="label legend event-planning"><a href="#/event-planning">event-planning</a></span>
+                    <span class="label legend other"><a href="#/other">other</a></span>
+                </div>
+            </div>
+            <div id="survey-list">
+            </div>
+            <button type="button" class="btn" id="prev-page">Previous page</button>
+            <button type="button" class="btn" id="next-page">Next page</button>
+            </div>
+        </div>
+        <script type="text/template" id="survey-template">
+            <div class="survey <%=category%>" id="<%=_id%>">
+                <h3><%=name%></h3>
+                <h5>Author: <span><%=author%></span></h5><h5>Date: <span><%=date%></span></h5><h5>Popularity: <span><%=popularity%></span></h5>
+                <p><%=description%></p>
+                <p><a class="btn" href="/page/fillInSurvey.html#<%=_id%>">View details&raquo;</a></p>
+            </div>
+        </script>
+		<script src="/jquery-1.8.2.min.js"></script>
+        <script src="/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/underscore-min.js"></script>
+        <script src="/mainpage.js"></script>
+        <script src="/navbar.js"></script>
+    </body>
+</html>
